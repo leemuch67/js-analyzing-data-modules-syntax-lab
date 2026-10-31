@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5f0">
+  <title>Wordly — Dictionary</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Wordly home"><span class="brand-mark">W</span><span>wordly</span></a>
+      <nav aria-label="Main navigation"><a class="nav-link active" href="#dictionary">Dictionary</a><a class="nav-link" href="#saved">My words <span class="saved-count" id="saved-count">0</span></a></nav>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark theme" title="Toggle theme"><span aria-hidden="true">◐</span></button>
+    </header>
+
+    <main id="top">
+      <section class="hero" id="dictionary" aria-labelledby="page-title">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> YOUR EVERYDAY LANGUAGE COMPANION</div>
+        <h1 id="page-title">Find the words<br>that <span>move you.</span></h1>
+        <p class="hero-copy">A little curiosity goes a long way. Look up a word and make it yours.</p>
+        <form class="search-form" id="search-form" role="search">
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <label class="visually-hidden" for="word-input">Search for a word</label>
+          <input id="word-input" name="word" type="search" placeholder="Try “serendipity”" autocomplete="off" required>
+          <button type="submit" id="search-button"><span class="button-label">Look up</span><span aria-hidden="true">↗</span></button>
+        </form>
+        <div class="search-meta"><span>Popular today</span><button type="button" class="suggestion">sonder</button><button type="button" class="suggestion">luminous</button><button type="button" class="suggestion">hiraeth</button></div>
+      </section>
+
+      <section class="results-wrap" aria-live="polite" aria-busy="false" id="results-region">
+        <div class="status-message" id="status-message"><span class="sparkle" aria-hidden="true">✳</span><span>Your next favorite word is one search away.</span></div>
+        <article id="results" class="result-card" hidden></article>
+      </section>
+
+      <section class="saved-section" id="saved" aria-labelledby="saved-heading">
+        <div class="section-heading"><div><p class="eyebrow small">GROW YOUR VOCABULARY</p><h2 id="saved-heading">Your word collection<span class="heading-period">.</span></h2></div><span class="collection-count" id="collection-count">0 WORDS</span></div>
+        <div class="saved-list" id="saved-list"><p class="empty-saved">Words you save will find a home here.</p></div>
+      </section>
+      <footer><span>Curiosity, one word at a time.</span><span>Definitions via Free Dictionary API</span></footer>
+    </main>
+  </div>
+</body>
+</html>
